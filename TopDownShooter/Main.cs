@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using TopDownShooter.Source;
 using TopDownShooter.Source.Engine;
 
 namespace TopDownShooter
@@ -12,6 +13,8 @@ namespace TopDownShooter
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
+        World world;
 
         public Main()
         {
@@ -42,6 +45,8 @@ namespace TopDownShooter
             Globals.content = this.Content;
             Globals.spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            world = new World();
+
             // TODO: use this.Content to load your game content here
         }
 
@@ -63,7 +68,7 @@ namespace TopDownShooter
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-
+            world.Update();
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -80,6 +85,8 @@ namespace TopDownShooter
             // TODO: Add your drawing code here
 
             Globals.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
+
+            world.Draw();
 
             Globals.spriteBatch.End();
 

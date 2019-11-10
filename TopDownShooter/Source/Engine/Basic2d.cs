@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace TopDownShooter.Source.Engine
 {
-    class Basic2d
+    public class Basic2d
     {
         public Vector2 pos, dims;
 
