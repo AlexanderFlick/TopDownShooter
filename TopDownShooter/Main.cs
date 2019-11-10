@@ -79,6 +79,10 @@ namespace TopDownShooter
 
             // TODO: Add your drawing code here
 
+            Globals.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
+
+            Globals.spriteBatch.End();
+
             base.Draw(gameTime);
         }
     }

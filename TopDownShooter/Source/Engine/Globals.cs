@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace TopDownShooter.Source.Engine
 {
-    class Globals
+    public class Globals
     {
         public static ContentManager content;
         public static SpriteBatch spriteBatch;
