@@ -8,5 +8,19 @@ namespace TopDownShooter.Source
 {
     public class World
     {
+        public World()
+        {
+
+        }
+
+        public virtual void Update()
+        {
+
+        }
+
+        public virtual void Draw()
+        {
+
+        }
     }
 }
