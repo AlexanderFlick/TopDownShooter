@@ -32,7 +32,13 @@ namespace TopDownShooter
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            Globals.screenWidth = 800;
+            Globals.screenHeight = 500;
+
+            graphics.PreferredBackBufferWidth = Globals.screenWidth;
+            graphics.PreferredBackBufferHeight = Globals.screenHeight;
+
+            graphics.ApplyChanges();
 
             base.Initialize();
         }
@@ -76,6 +82,7 @@ namespace TopDownShooter
                 Exit();
             Globals.keyboard.Update();
             Globals.mouse.Update();
+            Globals.gameTime = gameTime;
 
             world.Update();
 
