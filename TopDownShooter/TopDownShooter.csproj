@@ -48,7 +48,8 @@
     <Compile Include="Source\Engine\Input\Keyboard.cs" />
     <Compile Include="Source\Engine\Input\Keyboard\Key.cs" />
     <Compile Include="Source\Engine\Input\MouseControl.cs" />
-    <Compile Include="Source\Gameplay\World\Hero.cs" />
+    <Compile Include="Source\Gameplay\World\Unit.cs" />
+    <Compile Include="Source\Gameplay\World\Units\Hero.cs" />
     <Compile Include="Source\World.cs" />
   </ItemGroup>
   <ItemGroup>

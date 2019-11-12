@@ -8,13 +8,13 @@ using TopDownShooter.Source.Engine;
 
 namespace TopDownShooter.Source.Gameplay.World
 {
-    public class Hero : Basic2d
+    public class Hero : Unit
     {
         public float speed;
 
         public Hero(string _path, Vector2 _pos, Vector2 _dims) : base(_path, _pos, _dims)
         {
-            speed = 2;
+            speed = 2.0f;
         }
 
         public override void Update()
