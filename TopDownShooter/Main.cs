@@ -48,7 +48,7 @@ namespace TopDownShooter
             Globals.spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            cursor = new Basic2d("2d\\cursor", new Vector2(0,0), new Vector2(16,16));
+            cursor = new Basic2d("2d\\cursor", new Vector2(0,0), new Vector2(24,24));
 
             Globals.keyboard = new McKeyboard();
             Globals.mouse = new McMouseControl();
