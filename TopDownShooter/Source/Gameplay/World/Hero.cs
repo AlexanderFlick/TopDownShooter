@@ -37,9 +37,9 @@ namespace TopDownShooter.Source.Gameplay.World
             base.Update();
         }
 
-        public override void Draw()
+        public override void Draw(Vector2 _offset)
         {
-            base.Draw();
+            base.Draw(_offset);
         }
     }
 }

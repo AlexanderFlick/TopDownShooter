@@ -16,6 +16,8 @@ namespace TopDownShooter
 
         World world;
 
+        Basic2d cursor;
+        
         public Main()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -45,11 +47,13 @@ namespace TopDownShooter
             Globals.content = this.Content;
             Globals.spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            world = new World();
-
             // TODO: use this.Content to load your game content here
+            cursor = new Basic2d("2d\\cursor", new Vector2(0,0), new Vector2(16,16));
+
             Globals.keyboard = new McKeyboard();
             Globals.mouse = new McMouseControl();
+
+            world = new World();
         }
 
         /// <summary>
@@ -93,8 +97,9 @@ namespace TopDownShooter
 
             Globals.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
 
-            world.Draw();
+            world.Draw(Vector2.Zero);
 
+            cursor.Draw(new Vector2(Globals.mouse.newMousePos.X, Globals.mouse.newMousePos.Y), new Vector2(0, 0));
             Globals.spriteBatch.End();
 
             base.Draw(gameTime);
