@@ -48,6 +48,7 @@ namespace TopDownShooter
             world = new World();
 
             // TODO: use this.Content to load your game content here
+            Globals.keyboard = new McKeyboard();
         }
 
         /// <summary>
@@ -68,8 +69,9 @@ namespace TopDownShooter
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+            Globals.keyboard.Update();
             world.Update();
-            // TODO: Add your update logic here
+            Globals.keyboard.UpdateOld();
 
             base.Update(gameTime);
         }

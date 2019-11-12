@@ -12,5 +12,7 @@ namespace TopDownShooter.Source.Engine
     {
         public static ContentManager content;
         public static SpriteBatch spriteBatch;
+
+        public static McKeyboard keyboard;
     }
 }
