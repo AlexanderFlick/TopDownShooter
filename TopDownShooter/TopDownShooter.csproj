@@ -47,6 +47,7 @@
     <Compile Include="Source\Engine\Globals.cs" />
     <Compile Include="Source\Engine\Input\Keyboard.cs" />
     <Compile Include="Source\Engine\Input\Keyboard\Key.cs" />
+    <Compile Include="Source\Gameplay\World\Hero.cs" />
     <Compile Include="Source\World.cs" />
   </ItemGroup>
   <ItemGroup>

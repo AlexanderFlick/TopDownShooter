@@ -5,16 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TopDownShooter.Source.Engine;
+using TopDownShooter.Source.Gameplay.World;
 
 namespace TopDownShooter.Source
 {
     public class World
     {
-        public Basic2d hero;
+        public Hero hero;
 
         public World()
         {
-            hero = new Basic2d("2d\\player", new Vector2(300, 300), new Vector2(48, 48));
+            hero = new Hero("2d\\player", new Vector2(300, 300), new Vector2(48, 48));
         }
 
         public virtual void Update()
