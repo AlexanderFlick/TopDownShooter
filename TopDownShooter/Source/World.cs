@@ -15,7 +15,7 @@ namespace TopDownShooter.Source
 
         public World()
         {
-            hero = new Hero("2d\\player", new Vector2(300, 300), new Vector2(48, 48));
+            hero = new Hero("2d\\skeletonLR", new Vector2(300, 300), new Vector2(48, 48));
         }
 
         public virtual void Update()
