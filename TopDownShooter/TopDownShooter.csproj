@@ -59,19 +59,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\2d\bullet.png" />
-    <Content Include="Content\2d\enemy.png" />
-    <Content Include="Content\2d\groundTile.png" />
-    <Content Include="Content\2d\groundTile2.png" />
-    <Content Include="Content\2d\player.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\2d\skeletonLR.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <MonoGameContentReference Include="Content\Content.mgcb" />
+    <MonoGameContentReference Include="Content\Content.mgcb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </MonoGameContentReference>
     <None Include="app.manifest" />
+    <None Include="Content\2d\bullet.xnb" />
+    <None Include="Content\2d\cursor.xnb" />
+    <None Include="Content\2d\enemy.xnb" />
+    <None Include="Content\2d\groundTile.xnb" />
+    <None Include="Content\2d\groundTile2.xnb" />
+    <None Include="Content\2d\skeletonLR.xnb" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Audio\" />
