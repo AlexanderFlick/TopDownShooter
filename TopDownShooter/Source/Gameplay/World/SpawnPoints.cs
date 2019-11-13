@@ -5,28 +5,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TopDownShooter.Source.Engine;
+using TopDownShooterPrompt;
 
 namespace TopDownShooter.Source.Gameplay.World
 {
-    public class Unit : Basic2d
+    public class SpawnPoints : Basic2d
     {
-        public bool dead;
-        public float speed, hitDist;
+        public McTimer spawnTimer = new McTimer(2200);
 
-        public Unit(string _path, Vector2 _pos, Vector2 _dims) : base(_path, _pos, _dims)
+        public SpawnPoints(string _path, Vector2 _pos, Vector2 _dims) : base(_path, _pos, _dims)
         {
-            dead = false;
-            hitDist = 50.0f;
         }
 
         public override void Update(Vector2 _offset)
         {
+            spawnTimer.UpdateTimer();
+            if (spawnTimer.Test())
+            {
+                SpawnMob();
+                spawnTimer.ResetToZero();
+            }
+
             base.Update(_offset);
         }
 
-        public virtual void GetHit()
+        public virtual void SpawnMob()
         {
-            dead = true;
+            GameGlobals.PassMob(new Squid(new Vector2(pos.X, pos.Y)));
         }
 
         public override void Draw(Vector2 _offset)

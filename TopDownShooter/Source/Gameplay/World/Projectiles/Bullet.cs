@@ -12,7 +12,7 @@ namespace TopDownShooter.Source.Gameplay.World
 {
     public class Bullet : Projectile2d
     {
-        public Bullet(string _path, Vector2 _pos, Vector2 _dims, Unit _owner, Vector2 _target) : base("2d\\bullet", _pos, new Vector2(20,20), _owner, _target)
+        public Bullet(string _path, Vector2 _pos, Vector2 _dims, Unit _owner, Vector2 _target) : base("2d\\bullet", _pos, new Vector2(50,50), _owner, _target)
         {
             
         }

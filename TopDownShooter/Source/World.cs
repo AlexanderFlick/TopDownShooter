@@ -17,6 +17,7 @@ namespace TopDownShooter.Source
 
         public List<Projectile2d> projectiles = new List<Projectile2d>();
         public List<Mob> mobs = new List<Mob>();
+        public List<SpawnPoints> spawnPoints = new List<SpawnPoints>();
 
         public World()
         {
@@ -26,11 +27,22 @@ namespace TopDownShooter.Source
             GameGlobals.PassMob = AddMob;
 
             offset = new Vector2(0, 0);
+
+            spawnPoints.Add(new SpawnPoints("2d\\groundTile2", new Vector2(50,50), new Vector2(35,35)));
+            spawnPoints.Add(new SpawnPoints("2d\\groundTile2", new Vector2(Globals.screenWidth/2, 50), new Vector2(35, 35)));
+            spawnPoints[spawnPoints.Count - 1].spawnTimer.AddToTimer(500);
+            spawnPoints.Add(new SpawnPoints("2d\\groundTile2", new Vector2(Globals.screenWidth - 50, 50), new Vector2(35, 35)));
+            spawnPoints[spawnPoints.Count - 1].spawnTimer.AddToTimer(1000);
         }
 
         public virtual void Update()
         {
             hero.Update(offset);
+
+            for (int i = 0; i < spawnPoints.Count; i++)
+            {
+                spawnPoints[i].Update(offset);
+            }
 
             for (int i=0; i<projectiles.Count; i++)
             {
@@ -43,9 +55,9 @@ namespace TopDownShooter.Source
                 }
             }
 
-            for (int i = 0; i < mobs.Count; i++)
+            for (int i=0; i<mobs.Count; i++)
             {
-                mobs[i].Update(offset);
+                mobs[i].Update(offset, hero);
 
                 if (mobs[i].dead)
                 {
@@ -67,7 +79,12 @@ namespace TopDownShooter.Source
 
         public virtual void Draw(Vector2 _offset)
         {
-            hero.Draw(_offset);
+            
+            for (int i = 0; i < spawnPoints.Count; i++)
+            {
+                spawnPoints[i].Draw(offset);
+            }
+
             for (int i = 0; i < projectiles.Count; i++)
             {
                 projectiles[i].Draw(offset);
@@ -77,6 +94,8 @@ namespace TopDownShooter.Source
             {
                 mobs[i].Draw(offset);
             }
+
+            hero.Draw(_offset);
         }
     }
 }

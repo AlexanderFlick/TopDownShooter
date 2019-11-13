@@ -51,6 +51,7 @@
     <Compile Include="Source\Engine\Input\MouseControl.cs" />
     <Compile Include="Source\Gameplay\World\Projectile2d.cs" />
     <Compile Include="Source\Gameplay\World\Projectiles\Bullet.cs" />
+    <Compile Include="Source\Gameplay\World\SpawnPoints.cs" />
     <Compile Include="Source\Gameplay\World\Unit.cs" />
     <Compile Include="Source\Gameplay\World\Units\Mob.cs" />
     <Compile Include="Source\Gameplay\World\Units\Hero.cs" />
@@ -76,7 +77,9 @@
     <None Include="app.manifest" />
     <None Include="Content\2d\bullet.xnb" />
     <None Include="Content\2d\cursor.xnb" />
-    <None Include="Content\2d\enemy.xnb" />
+    <None Include="Content\2d\enemy.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Content\2d\groundTile.xnb" />
     <None Include="Content\2d\groundTile2.xnb" />
     <None Include="Content\2d\skeletonLR.xnb" />
