@@ -15,15 +15,15 @@ namespace TopDownShooter.Source.Gameplay.World
             speed = 2.0f;
         }
 
-        public override void Update(Vector2 _offset)
+        public virtual void Update(Vector2 _offset, Hero _hero)
         {
-            AI();
+            AI(_hero);
             base.Update(_offset);
         }
 
-        public virtual void AI()
+        public virtual void AI(Hero _hero)
         {
-
+            pos += Globals.RadialMovement(_hero.pos, pos, speed);
         }
 
         public override void Draw(Vector2 _offset)

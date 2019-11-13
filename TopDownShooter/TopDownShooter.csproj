@@ -54,6 +54,7 @@
     <Compile Include="Source\Gameplay\World\Unit.cs" />
     <Compile Include="Source\Gameplay\World\Units\Mob.cs" />
     <Compile Include="Source\Gameplay\World\Units\Hero.cs" />
+    <Compile Include="Source\Gameplay\World\Units\Mob\Squid.cs" />
     <Compile Include="Source\Timer.cs" />
     <Compile Include="Source\World.cs" />
   </ItemGroup>

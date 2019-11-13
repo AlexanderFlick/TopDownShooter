@@ -54,6 +54,14 @@ namespace TopDownShooter.Source.Gameplay.World
 
         public virtual bool HitSomething(List<Unit> _units)
         {
+            for(int i=0; i<_units.Count; i++)
+            {
+                if(Globals.GetDistance(pos, _units[i].pos) < _units[i].hitDist)
+                {
+                    _units[i].GetHit();
+                    return true;
+                }
+            }
             return false;
         }
 

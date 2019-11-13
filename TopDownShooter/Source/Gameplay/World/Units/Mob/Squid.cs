@@ -8,25 +8,16 @@ using TopDownShooter.Source.Engine;
 
 namespace TopDownShooter.Source.Gameplay.World
 {
-    public class Unit : Basic2d
+    public class Squid : Mob
     {
-        public bool dead;
-        public float speed, hitDist;
-
-        public Unit(string _path, Vector2 _pos, Vector2 _dims) : base(_path, _pos, _dims)
+        public Squid(string _path, Vector2 _pos) : base("2d\\enemy", _pos, new Vector2(32,32))
         {
-            dead = false;
-            hitDist = 35.0f;
+            speed = 2.0f;
         }
 
-        public override void Update(Vector2 _offset)
+        public override void Update(Vector2 _offset, Hero _hero)
         {
             base.Update(_offset);
-        }
-
-        public virtual void GetHit()
-        {
-            dead = true;
         }
 
         public override void Draw(Vector2 _offset)
