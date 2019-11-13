@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace TopDownShooter.Source.Engine
 {
+    public delegate void PassObject(object i);
+    public delegate object PassObjectAndReturn(object i);
+
     public class Globals
     {
         public static ContentManager content;

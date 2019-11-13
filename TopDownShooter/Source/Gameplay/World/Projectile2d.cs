@@ -37,6 +37,8 @@ namespace TopDownShooter.Source.Gameplay.World
         {
             pos += direction * speed;
 
+
+
             timer.UpdateTimer();
 
             if (timer.Test())

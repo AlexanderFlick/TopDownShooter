@@ -36,6 +36,11 @@ namespace TopDownShooter.Source.Gameplay.World
                 pos = new Vector2(pos.X, pos.Y + speed);
             }
 
+            if (Globals.mouse.LeftClick())
+            {
+                GameGlobals.PassProjectile(new Bullet("2d\\bullet", new Vector2(pos.X, pos.Y), new Vector2(100, 100), this, new Vector2(Globals.mouse.newMousePos.X, Globals.mouse.newMousePos.Y)));
+            }
+
             base.Update();
         }
 
