@@ -10,14 +10,12 @@ namespace TopDownShooter.Source.Gameplay.World
 {
     public class Hero : Unit
     {
-        public float speed;
-
         public Hero(string _path, Vector2 _pos, Vector2 _dims) : base(_path, _pos, _dims)
         {
             speed = 2.0f;
         }
 
-        public override void Update()
+        public override void Update(Vector2 _offset)
         {
             if (Globals.keyboard.GetPress("A"))
             {
@@ -41,7 +39,7 @@ namespace TopDownShooter.Source.Gameplay.World
                 GameGlobals.PassProjectile(new Bullet("2d\\bullet", new Vector2(pos.X, pos.Y), new Vector2(100, 100), this, new Vector2(Globals.mouse.newMousePos.X, Globals.mouse.newMousePos.Y)));
             }
 
-            base.Update();
+            base.Update(_offset);
         }
 
         public override void Draw(Vector2 _offset)

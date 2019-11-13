@@ -52,6 +52,7 @@
     <Compile Include="Source\Gameplay\World\Projectile2d.cs" />
     <Compile Include="Source\Gameplay\World\Projectiles\Bullet.cs" />
     <Compile Include="Source\Gameplay\World\Unit.cs" />
+    <Compile Include="Source\Gameplay\World\Units\Mob.cs" />
     <Compile Include="Source\Gameplay\World\Units\Hero.cs" />
     <Compile Include="Source\Timer.cs" />
     <Compile Include="Source\World.cs" />

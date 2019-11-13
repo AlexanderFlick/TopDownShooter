@@ -24,7 +24,7 @@ namespace TopDownShooter.Source.Engine
             myModel = Globals.content.Load<Texture2D>(_path);
         }
 
-        public virtual void Update()
+        public virtual void Update(Vector2 _offset)
         {
 
         }

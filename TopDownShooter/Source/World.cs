@@ -16,23 +16,25 @@ namespace TopDownShooter.Source
         public Hero hero;
 
         public List<Projectile2d> projectiles = new List<Projectile2d>();
+        public List<Mob> mobs = new List<Mob>();
 
         public World()
         {
             hero = new Hero("2d\\skeletonLR", new Vector2(300, 300), new Vector2(48, 48));
 
             GameGlobals.PassProjectile = AddProjectile;
+            GameGlobals.PassMob = AddMob;
 
             offset = new Vector2(0, 0);
         }
 
         public virtual void Update()
         {
-            hero.Update();
+            hero.Update(offset);
 
             for (int i=0; i<projectiles.Count; i++)
             {
-                projectiles[i].Update(offset, null);
+                projectiles[i].Update(offset, mobs.ToList<Unit>());
 
                 if (projectiles[i].done)
                 {
@@ -40,6 +42,22 @@ namespace TopDownShooter.Source
                     i--;
                 }
             }
+
+            for (int i = 0; i < mobs.Count; i++)
+            {
+                mobs[i].Update(offset);
+
+                if (mobs[i].dead)
+                {
+                    mobs.RemoveAt(i);
+                    i--;
+                }
+            }
+        }
+
+        public virtual void AddMob(object _info)
+        {
+            mobs.Add((Mob)_info);
         }
 
         public virtual void AddProjectile(object _info)

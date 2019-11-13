@@ -8,20 +8,22 @@ using TopDownShooter.Source.Engine;
 
 namespace TopDownShooter.Source.Gameplay.World
 {
-    public class Unit : Basic2d
+    public class Mob : Unit
     {
-        public bool dead;
-        public float speed, hitDist;
-
-        public Unit(string _path, Vector2 _pos, Vector2 _dims) : base(_path, _pos, _dims)
+        public Mob(string _path, Vector2 _pos, Vector2 _dims) : base(_path, _pos, _dims)
         {
-            dead = false;
-            hitDist = 35.0f;
+            speed = 2.0f;
         }
 
         public override void Update(Vector2 _offset)
         {
+            AI();
             base.Update(_offset);
+        }
+
+        public virtual void AI()
+        {
+
         }
 
         public override void Draw(Vector2 _offset)
